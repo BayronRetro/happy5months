@@ -70,7 +70,7 @@ This agreement shall be governed by and construed in accordance with the laws of
 For any inquiries regarding this license or the use of the Repository Content, please contact:
 
 - **Email**: kndgextra@gmail.com
-- **GitHub**: [GitHub Profile URL]
+- **GitHub**: [GitHub Profile URL](https://github.com/BayronRetro)
 
 ---
 
