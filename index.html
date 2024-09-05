@@ -19,11 +19,17 @@
         h1 {
             font-size: 3em;
         }
+        h5 {
+            font-size: 1.2em;
+            margin: 0;
+        }
         .container {
             background: rgba(255, 255, 255, 0.2);
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
         }
         .message {
             font-size: 1.5em;
@@ -39,6 +45,39 @@
             margin: 10px;
             border-radius: 10px;
             box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            .message {
+                font-size: 1.2em;
+            }
+            .countdown {
+                font-size: 1.5em;
+            }
+            .gallery img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+            }
+            .message {
+                font-size: 1em;
+            }
+            .countdown {
+                font-size: 1.2em;
+            }
+            .gallery img {
+                width: 70px;
+                height: 70px;
+            }
         }
     </style>
 </head>
