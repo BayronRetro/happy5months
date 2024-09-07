@@ -76,38 +76,44 @@ body {
     background: linear-gradient(to right, #ff9a9e, #fad0c4);
     display: flex;
     flex-direction: column;
-    justify-content: center; /* This centers the container vertically */
+    justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Ensures the body takes the full viewport height */
+    min-height: 100vh;
     margin: 0;
     color: white;
     text-align: center;
-    padding-bottom: 50px; /* Adds padding at the bottom to avoid overlap with footer */
+    padding-bottom: 50px;
 }
+
 h1 {
     font-size: 2.5em;
-    white-space: nowrap; /* Prevent line break */
+    white-space: nowrap;
 }
+
 h5 {
     font-size: 1.2em;
     margin: 0;
 }
+
 .container {
     background: rgba(255, 255, 255, 0.2);
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    max-width: 90%; /* Scale container width for smaller screens */
-    width: 500px; /* Default width on larger screens */
+    max-width: 90%;
+    width: 500px;
 }
+
 .message {
     font-size: 1.5em;
     margin-top: 20px;
 }
+
 .countdown {
     font-size: 2em;
     margin-top: 20px;
 }
+
 .gallery img {
     width: 100px;
     height: 100px;
@@ -118,9 +124,9 @@ h5 {
 
 /* Footer styles */
 footer {
-    width: 100%; /* Make the footer span the entire width */
+    width: 100%;
     padding: 10px 0;
-    background: rgba(0, 0, 0, 0.5); /* Add a slight background for clarity */
+    background: rgba(0, 0, 0, 0.5);
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.9em;
     text-align: center;
@@ -131,17 +137,21 @@ footer {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2em; /* Reduce font size slightly */
+        font-size: 2em;
     }
+
     .container {
-        max-width: 95%; /* Adjust container width for tablets */
+        max-width: 95%;
     }
+
     .message {
         font-size: 1.2em;
     }
+
     .countdown {
         font-size: 1.5em;
     }
+
     .gallery img {
         width: 80px;
         height: 80px;
@@ -150,18 +160,22 @@ footer {
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 1.8em;  /* Further reduce font size for mobile */
-        white-space: nowrap;  /* Prevent line break */
+        font-size: 1.8em;
+        white-space: nowrap;
     }
+
     .container {
-        max-width: 100%; /* Use full width on small screens */
+        max-width: 100%;
     }
+
     .message {
         font-size: 1em;
     }
+
     .countdown {
         font-size: 1.2em;
     }
+
     .gallery img {
         width: 70px;
         height: 70px;
