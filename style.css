@@ -1,97 +1,71 @@
-
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* This centers the container vertically */
+    justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Ensures the body takes the full viewport height */
-    margin: 0;
-    color: white;
-    text-align: center;
-    padding-bottom: 50px; /* Adds padding at the bottom to avoid overlap with footer */
 }
-h1 {
-    font-size: 2.5em;
-    white-space: nowrap; /* Prevent line break */
+
+.slides {
+    display: none;
 }
-h5 {
-    font-size: 1.2em;
-    margin: 0;
-}
-.container {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    max-width: 90%; /* Scale container width for smaller screens */
-    width: 500px; /* Default width on larger screens */
-}
-.message {
-    font-size: 1.5em;
-    margin-top: 20px;
-}
-.countdown {
-    font-size: 2em;
-    margin-top: 20px;
-}
-.gallery img {
-    width: 100px;
-    height: 100px;
-    margin: 10px;
+
+.slideshow-img {
+    width: 100%;
     border-radius: 10px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer styles */
-footer {
-    width: 100%; /* Make the footer span the entire width */
-    padding: 10px 0;
-    background: rgba(0, 0, 0, 0.5); /* Add a slight background for clarity */
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9em;
-    text-align: center;
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
     position: absolute;
-    bottom: 0;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2em; /* Reduce font size slightly */
-    }
-    .container {
-        max-width: 95%; /* Adjust container width for tablets */
-    }
-    .message {
-        font-size: 1.2em;
-    }
-    .countdown {
-        font-size: 1.5em;
-    }
-    .gallery img {
-        width: 80px;
-        height: 80px;
-    }
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.8em;  /* Further reduce font size for mobile */
-        white-space: nowrap;  /* Prevent line break */
-    }
-    .container {
-        max-width: 100%; /* Use full width on small screens */
-    }
-    .message {
-        font-size: 1em;
-    }
-    .countdown {
-        font-size: 1.2em;
-    }
-    .gallery img {
-        width: 70px;
-        height: 70px;
-    }
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from { opacity: .4 }
+    to { opacity: 1 }
+}
+
+/* Dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: #717171;
 }
