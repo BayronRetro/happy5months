@@ -1,23 +1,24 @@
 // Countdown timer script
 function countdown() {
-    const targetDate = new Date("2024-09-05T00:00:00"); // Set your 6-month anniversary date
+    const targetDate = new Date("2024-09-05T00:00:00"); // Set your target date
     const now = new Date().getTime();
     const timeLeft = targetDate - now;
+
+    if (timeLeft <= 0) {
+        // Time is up, show the surprise button
+        document.querySelector(".countdown").innerHTML = `
+            <button id="surpriseButton" onclick="showSurprise()">Show Surprise</button>
+        `;
+        return; // Exit the function to stop further countdown
+    }
 
     const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
     const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-    if (timeLeft < 0) {
-        // Replace countdown with a button when the time is up
-        document.querySelector(".countdown").innerHTML = `
-            <button id="surpriseButton" onclick="showSurprise()">Show Surprise</button>
-        `;
-    } else {
-        // Display the countdown
-        document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
+    // Display the countdown
+    document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 }
 
 // Surprise function to show the slideshow
