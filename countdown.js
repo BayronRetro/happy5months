@@ -1,6 +1,6 @@
 // Countdown timer script
 function countdown() {
-    const targetDate = new Date("2024-10-05T00:00:00"); // Set your 6-month anniversary date
+    const targetDate = new Date("2024-09-05T00:00:00"); // Set your 6-month anniversary date
     const now = new Date().getTime();
     const timeLeft = targetDate - now;
 
