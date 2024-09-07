@@ -1,3 +1,4 @@
+
 // Countdown timer script
 function countdown() {
     const targetDate = new Date("2024-10-05T00:00:00"); // Set your 6-month anniversary date
@@ -16,7 +17,7 @@ function countdown() {
         `;
     } else {
         // Display the countdown
-        document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        document.getElementById("timer").innerHTML = \`\${days}d \${hours}h \${minutes}m \${seconds}s\`;
     }
 }
 
