@@ -1,4 +1,3 @@
-
 // Countdown timer script
 function countdown() {
     const targetDate = new Date("2024-10-05T00:00:00"); // Set your 6-month anniversary date
@@ -12,18 +11,18 @@ function countdown() {
 
     if (timeLeft < 0) {
         // Replace countdown with a button when the time is up
-        document.querySelector(".countdown").innerHTML = \`
+        document.querySelector(".countdown").innerHTML = `
             <button id="surpriseButton" onclick="showSurprise()">Show Surprise</button>
-        \`;
+        `;
     } else {
         // Display the countdown
-        document.getElementById("timer").innerHTML = \`\${days}d \${hours}h \${minutes}m \${seconds}s\`;
+        document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
 }
 
 // Surprise function to show the slideshow
 function showSurprise() {
-    document.querySelector(".countdown").innerHTML = \`
+    document.querySelector(".countdown").innerHTML = `
         <div class="surprise-message">
             <h2>🎉 Surprise! 🎉</h2>
             <p>We've reached 6 months, my love! Here’s to many more beautiful moments together. ❤️</p>
@@ -47,7 +46,8 @@ function showSurprise() {
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(3)"></span>
             </div>
-        \`;
+        </div>
+    `;
     showSlides(slideIndex);
 }
 
