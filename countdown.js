@@ -1,17 +1,18 @@
+let countdownInterval; // Variable to store the countdown interval
+
 // Countdown timer script
 function countdown() {
     const targetDate = new Date("2024-09-05T00:00:00"); // Set your target date
     const now = new Date().getTime(); // Get current time in milliseconds
     const timeLeft = targetDate.getTime() - now; // Calculate the time difference in milliseconds
 
-    console.log("Time left: ", timeLeft); // Debugging: Log time left to see if it's negative
-
     if (timeLeft <= 0) {
-        // If time is up or the target date is in the past, show the surprise button
+        // Time is up or the target date is in the past, show the surprise button
         document.querySelector(".countdown").innerHTML = `
             <button id="surpriseButton" onclick="showSurprise()">Show Surprise</button>
         `;
-        return; // Stop further countdown updates
+        clearInterval(countdownInterval); // Stop the countdown interval to prevent further refreshes
+        return;
     }
 
     const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
@@ -25,6 +26,9 @@ function countdown() {
 
 // Surprise function to show the slideshow
 function showSurprise() {
+    // Once the surprise is shown, clear the countdown interval to stop further updates
+    clearInterval(countdownInterval); 
+    
     document.querySelector(".countdown").innerHTML = `
         <div class="surprise-message">
             <h2>🎉 Surprise! 🎉</h2>
@@ -51,7 +55,7 @@ function showSurprise() {
             </div>
         </div>
     `;
-    showSlides(slideIndex);
+    showSlides(slideIndex); // Start the slideshow
 }
 
 // Slideshow functions
@@ -85,5 +89,5 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
-// Start the countdown
-setInterval(countdown, 1000);
+// Start the countdown and store the interval to clear it later
+countdownInterval = setInterval(countdown, 1000);
