@@ -1,15 +1,17 @@
 // Countdown timer script
 function countdown() {
     const targetDate = new Date("2024-09-05T00:00:00"); // Set your target date
-    const now = new Date().getTime();
-    const timeLeft = targetDate - now;
+    const now = new Date().getTime(); // Get current time in milliseconds
+    const timeLeft = targetDate.getTime() - now; // Calculate the time difference in milliseconds
+
+    console.log("Time left: ", timeLeft); // Debugging: Log time left to see if it's negative
 
     if (timeLeft <= 0) {
-        // Time is up, show the surprise button
+        // If time is up or the target date is in the past, show the surprise button
         document.querySelector(".countdown").innerHTML = `
             <button id="surpriseButton" onclick="showSurprise()">Show Surprise</button>
         `;
-        return; // Exit the function to stop further countdown
+        return; // Stop further countdown updates
     }
 
     const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
@@ -67,18 +69,18 @@ function showSlides(n) {
     let i;
     const slides = document.getElementsByClassName("slides");
     const dots = document.getElementsByClassName("dot");
-    
+
     if (n > slides.length) { slideIndex = 1; }
     if (n < 1) { slideIndex = slides.length; }
 
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
-    
+
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
-    
+
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
 }
